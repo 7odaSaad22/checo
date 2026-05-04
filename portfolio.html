@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البورتفوليو | Cheko Fotoshope</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">CHEKO</a>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="portfolio.html" style="color: var(--primary);">البورتفوليو</a></li>
+            <li><a href="sessions.html">السيشنات</a></li>
+            <li><a href="admin.html">لوحة التحكم</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1>البورتفوليو</h1>
+        <p>مجموعة مختارة من أفضل أعمالنا</p>
+        <div class="page-header-line"></div>
+    </div>
+
+    <!-- Filters -->
+    <section class="portfolio-section">
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">الكل</button>
+            <button class="filter-btn" data-filter="wedding">زفاف</button>
+            <button class="filter-btn" data-filter="portrait">بورتريه</button>
+            <button class="filter-btn" data-filter="product">منتجات</button>
+            <button class="filter-btn" data-filter="outdoor">خارجي</button>
+            <button class="filter-btn" data-filter="event">مناسبات</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Loaded dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Cheko Fotoshope - جميع الحقوق محفوظة</p>
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheko Fotoshope | مصور محترف</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">CHEKO</a>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="portfolio.html">البورتفوليو</a></li>
+            <li><a href="sessions.html">السيشنات</a></li>
+            <li><a href="admin.html">لوحة التحكم</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg-particles"></div>
+        <div class="hero-content">
+            <div class="photographer-figure">
+                <div class="figure-silhouette">
+                    <!-- SVG Photographer Silhouette -->
+                    <svg class="photographer-svg" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Body glow -->
+                        <defs>
+                            <radialGradient id="bodyGlow" cx="50%" cy="40%" r="50%">
+                                <stop offset="0%" stop-color="#d4a853" stop-opacity="0.15"/>
+                                <stop offset="100%" stop-color="#d4a853" stop-opacity="0"/>
+                            </radialGradient>
+                            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#d4a853"/>
+                                <stop offset="50%" stop-color="#f0d78c"/>
+                                <stop offset="100%" stop-color="#d4a853"/>
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Background glow -->
+                        <ellipse cx="200" cy="250" rx="180" ry="230" fill="url(#bodyGlow)"/>
+                        
+                        <!-- Head -->
+                        <circle cx="200" cy="140" r="45" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.8"/>
+                        <circle cx="200" cy="140" r="42" fill="rgba(212, 168, 83, 0.05)"/>
+                        
+                        <!-- Camera icon on chest -->
+                        <text x="200" y="265" text-anchor="middle" fill="#d4a853" font-size="30" opacity="0.6">📷</text>
+                        
+                        <!-- Neck -->
+                        <line x1="200" y1="185" x2="200" y2="210" stroke="url(#goldGrad)" stroke-width="2" opacity="0.6"/>
+                        
+                        <!-- Shoulders & Body -->
+                        <path d="M 200 210 Q 200 220, 140 230 L 130 350 Q 130 370, 155 370 L 245 370 Q 270 370, 270 350 L 260 230 Q 200 220, 200 210" 
+                              fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.5"/>
+                        
+                        <!-- Right Arm (raised up) -->
+                        <path d="M 260 230 Q 290 200, 310 160 Q 320 140, 330 120" 
+                              fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.7"/>
+                        
+                        <!-- Left Arm (raised up) -->
+                        <path d="M 140 230 Q 110 200, 90 160 Q 80 140, 70 120" 
+                              fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.7"/>
+                        
+                        <!-- Right Hand circle -->
+                        <circle cx="330" cy="105" r="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.3"/>
+                        
+                        <!-- Left Hand circle -->
+                        <circle cx="70" cy="105" r="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.3"/>
+                        
+                        <!-- Legs -->
+                        <line x1="175" y1="370" x2="165" y2="470" stroke="url(#goldGrad)" stroke-width="2" opacity="0.4"/>
+                        <line x1="225" y1="370" x2="235" y2="470" stroke="url(#goldGrad)" stroke-width="2" opacity="0.4"/>
+                        
+                        <!-- Decorative dots -->
+                        <circle cx="200" cy="80" r="2" fill="#d4a853" opacity="0.4"/>
+                        <circle cx="180" cy="70" r="1.5" fill="#d4a853" opacity="0.3"/>
+                        <circle cx="220" cy="75" r="1.5" fill="#d4a853" opacity="0.3"/>
+                    </svg>
+
+                    <!-- Right Hand - Portfolio -->
+                    <a href="portfolio.html" class="hand-btn hand-right">
+                        <i class="fas fa-images"></i>
+                        <span>البورتفوليو</span>
+                    </a>
+
+                    <!-- Left Hand - Sessions -->
+                    <a href="sessions.html" class="hand-btn hand-left">
+                        <i class="fas fa-camera-retro"></i>
+                        <span>السيشنات</span>
+                    </a>
+                </div>
+            </div>
+            <h1 class="hero-title">CHEKO FOTOSHOPE</h1>
+            <p class="hero-subtitle">التصوير الاحترافي • حفظ اللحظات</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section style="padding: 80px 50px; max-width: 900px; margin: 0 auto; text-align: center;">
+        <h2 class="fade-in" style="font-size: 2rem; color: var(--primary); margin-bottom: 20px;">من نحن</h2>
+        <p class="fade-in" style="color: var(--text-muted); font-size: 1.05rem; line-height: 2;">
+            نحن نؤمن بأن كل لحظة تستحق أن تُخلّد. من جلسات التصوير الاحترافية إلى حفلات الزفاف والمناسبات الخاصة، 
+            نقدم لك تجربة تصوير فريدة مع أعلى معايير الجودة. احصل على صورك بسهولة عبر منصتنا الإلكترونية.
+        </p>
+        <div class="fade-in" style="display: flex; justify-content: center; gap: 50px; margin-top: 40px; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 900; color: var(--primary);">+500</div>
+                <div style="color: var(--text-muted); font-size: 0.9rem;">عميل سعيد</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 900; color: var(--primary);">+1000</div>
+                <div style="color: var(--text-muted); font-size: 0.9rem;">جلسة تصوير</div>
+            </div>
+            <div style="text-align: center;">
+                <div style="font-size: 2.5rem; font-weight: 900; color: var(--primary);">+5</div>
+                <div style="color: var(--text-muted); font-size: 0.9rem;">سنوات خبرة</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section style="padding: 60px 50px; max-width: 1200px; margin: 0 auto;">
+        <h2 class="fade-in" style="text-align: center; font-size: 2rem; color: var(--primary); margin-bottom: 50px;">خدماتنا</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+            <div class="fade-in" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 35px 25px; text-align: center; transition: var(--transition);">
+                <i class="fas fa-ring" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <h3 style="color: var(--text-light); margin-bottom: 10px;">تصوير زفاف</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">نوثّق أجمل لحظات يومك المميز بأسلوب احترافي وإبداعي</p>
+            </div>
+            <div class="fade-in" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 35px 25px; text-align: center;">
+                <i class="fas fa-user" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <h3 style="color: var(--text-light); margin-bottom: 10px;">بورتريه</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">جلسات تصوير شخصية تعكس شخصيتك الفريدة</p>
+            </div>
+            <div class="fade-in" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 35px 25px; text-align: center;">
+                <i class="fas fa-box-open" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <h3 style="color: var(--text-light); margin-bottom: 10px;">تصوير منتجات</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">صور احترافية لمنتجاتك تزيد من مبيعاتك</p>
+            </div>
+            <div class="fade-in" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 35px 25px; text-align: center;">
+                <i class="fas fa-calendar-star" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;"></i>
+                <h3 style="color: var(--text-light); margin-bottom: 10px;">مناسبات</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">تغطية كاملة لجميع المناسبات والأحداث</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding: 80px 50px; text-align: center;">
+        <div class="fade-in" style="max-width: 600px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 24px; padding: 50px 40px;">
+            <i class="fas fa-camera" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+            <h2 style="color: var(--text-light); font-size: 1.8rem; margin-bottom: 15px;">جاهز لحجز سيشن؟</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">تواصل معنا الآن واحجز جلسة التصوير الخاصة بك</p>
+            <a href="sessions.html" class="btn-primary" style="display: inline-flex; width: auto;">
+                <i class="fas fa-arrow-left"></i>
+                ابحث عن صورك
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Cheko Fotoshope - جميع الحقوق محفوظة</p>
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

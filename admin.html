@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | Cheko Fotoshope</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">CHEKO</a>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="portfolio.html">البورتفوليو</a></li>
+            <li><a href="sessions.html">السيشنات</a></li>
+            <li><a href="admin.html" style="color: var(--primary);">لوحة التحكم</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1><i class="fas fa-cog" style="margin-left: 15px;"></i> لوحة التحكم</h1>
+        <p>إدارة العملاء والسيشنات والبورتفوليو</p>
+        <div class="page-header-line"></div>
+    </div>
+
+    <section class="admin-section">
+        <!-- Admin Login -->
+        <div class="admin-login" id="adminLogin">
+            <h2><i class="fas fa-lock" style="margin-left: 10px;"></i> تسجيل الدخول</h2>
+            <p>أدخل كلمة المرور للوصول إلى لوحة التحكم</p>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <input type="password" id="adminPass" placeholder="كلمة المرور" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">
+                    <i class="fas fa-sign-in-alt"></i>
+                    دخول
+                </button>
+            </form>
+            <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-muted);">
+                كلمة المرور الافتراضية: admin123
+            </p>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="admin-dashboard" id="adminDashboard">
+            <!-- Stats -->
+            <div class="admin-stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3 id="totalClients">0</h3>
+                    <p>إجمالي العملاء</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3 id="activeClients">0</h3>
+                    <p>سيشنات نشطة</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3 id="expiredClients">0</h3>
+                    <p>سيشنات منتهية</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-images"></i>
+                    <h3 id="totalPortfolio">0</h3>
+                    <p>أعمال البورتفوليو</p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="admin-tabs">
+                <button class="admin-tab active" data-tab="tabClients">
+                    <i class="fas fa-user-plus" style="margin-left: 8px;"></i> إدارة العملاء
+                </button>
+                <button class="admin-tab" data-tab="tabPortfolio">
+                    <i class="fas fa-images" style="margin-left: 8px;"></i> البورتفوليو
+                </button>
+                <button class="admin-tab" data-tab="tabSettings">
+                    <i class="fas fa-cog" style="margin-left: 8px;"></i> الإعدادات
+                </button>
+                <button class="admin-tab" style="margin-right: auto; border-color: #e74c3c; color: #e74c3c;" onclick="adminLogout()">
+                    <i class="fas fa-sign-out-alt" style="margin-left: 8px;"></i> خروج
+                </button>
+            </div>
+
+            <!-- Tab: Clients -->
+            <div id="tabClients" class="admin-tab-content">
+                <!-- Add Client Form -->
+                <div class="admin-form-card">
+                    <h3><i class="fas fa-user-plus"></i> إضافة عميل جديد</h3>
+                    <form id="addClientForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>اسم العميل *</label>
+                                <input type="text" id="clientName" placeholder="مثال: أحمد محمد" required>
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الهاتف *</label>
+                                <input type="text" id="clientPhone" placeholder="مثال: 01012345678" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>رابط مجلد Google Drive</label>
+                            <input type="url" id="clientDriveLink" placeholder="https://drive.google.com/drive/folders/...">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>مدة عرض الصور</label>
+                                <input type="number" id="clientDuration" value="7" min="1" max="365">
+                            </div>
+                            <div class="form-group">
+                                <label>وحدة المدة</label>
+                                <select id="clientDurationUnit">
+                                    <option value="hours">ساعات</option>
+                                    <option value="days" selected>أيام</option>
+                                    <option value="weeks">أسابيع</option>
+                                    <option value="months">شهور</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>روابط الصور (رابط في كل سطر - من Google Drive أو أي رابط صورة)</label>
+                            <textarea id="clientPhotoLinks" rows="4" placeholder="https://drive.google.com/file/d/XXXXX/view&#10;https://drive.google.com/file/d/YYYYY/view&#10;أو أي رابط صورة مباشر"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>ملاحظات</label>
+                            <input type="text" id="clientNotes" placeholder="ملاحظات إضافية (اختياري)">
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            إضافة العميل
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Clients Table -->
+                <div class="clients-table-wrapper">
+                    <table class="clients-table">
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>الهاتف</th>
+                                <th>عدد الصور</th>
+                                <th>الحالة</th>
+                                <th>المتبقي</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientsTableBody">
+                            <!-- Loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab: Portfolio -->
+            <div id="tabPortfolio" class="admin-tab-content" style="display: none;">
+                <!-- Add Portfolio Item -->
+                <div class="admin-form-card">
+                    <h3><i class="fas fa-plus-circle"></i> إضافة عمل جديد للبورتفوليو</h3>
+                    <form id="addPortfolioForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>عنوان العمل *</label>
+                                <input type="text" id="portfolioTitle" placeholder="مثال: جلسة تصوير زفاف" required>
+                            </div>
+                            <div class="form-group">
+                                <label>التصنيف</label>
+                                <select id="portfolioCategory">
+                                    <option value="wedding">زفاف</option>
+                                    <option value="portrait">بورتريه</option>
+                                    <option value="product">منتجات</option>
+                                    <option value="outdoor">خارجي</option>
+                                    <option value="event">مناسبات</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>رابط الصورة * (من Google Drive أو أي رابط مباشر)</label>
+                            <input type="url" id="portfolioImage" placeholder="https://drive.google.com/file/d/XXXXX/view" required>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            إضافة للبورتفوليو
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Portfolio Table -->
+                <div class="clients-table-wrapper">
+                    <table class="clients-table">
+                        <thead>
+                            <tr>
+                                <th>الصورة</th>
+                                <th>العنوان</th>
+                                <th>التصنيف</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="portfolioTableBody">
+                            <!-- Loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Tab: Settings -->
+            <div id="tabSettings" class="admin-tab-content" style="display: none;">
+                <div class="admin-form-card">
+                    <h3><i class="fas fa-cog"></i> إعدادات الموقع</h3>
+                    <form id="settingsForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>اسم المصور</label>
+                                <input type="text" id="photographerName" placeholder="اسمك الكامل">
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الهاتف</label>
+                                <input type="text" id="photographerPhone" placeholder="01012345678">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>نبذة مختصرة</label>
+                            <textarea id="photographerBio" rows="3" placeholder="اكتب نبذة مختصرة عن نفسك..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>رابط Instagram</label>
+                            <input type="text" id="photographerInsta" placeholder="@username">
+                        </div>
+                        <div class="form-group">
+                            <label>كلمة مرور جديدة (اتركها فارغة لعدم التغيير)</label>
+                            <input type="password" id="newAdminPass" placeholder="كلمة مرور جديدة">
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-save"></i>
+                            حفظ الإعدادات
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Subscription Info -->
+                <div class="admin-form-card" style="margin-top: 25px;">
+                    <h3><i class="fas fa-crown"></i> الاشتراك</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                        <div style="background: rgba(212, 168, 83, 0.05); border: 1px solid rgba(212, 168, 83, 0.2); border-radius: 14px; padding: 25px; text-align: center;">
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">شهري</h4>
+                            <div style="font-size: 2rem; font-weight: 900; color: var(--text-light); margin-bottom: 5px;">
+                                99 <span style="font-size: 0.9rem; color: var(--text-muted);">ج.م/شهر</span>
+                            </div>
+                            <ul style="list-style: none; margin: 15px 0; text-align: right;">
+                                <li style="padding: 5px 0; color: var(--text-muted); font-size: 0.85rem;">
+                                    <i class="fas fa-check" style="color: var(--primary); margin-left: 8px;"></i> عملاء غير محدودين
+                                </li>
+                                <li style="padding: 5px 0; color: var(--text-muted); font-size: 0.85rem;">
+                                    <i class="fas fa-check" style="color: var(--primary); margin-left: 8px;"></i> ربط Google Drive
+                                </li>
+                                <li style="padding: 5px 0; color: var(--text-muted); font-size: 0.85rem;">
+                                    <i class="fas fa-check" style="color: var(--primary); margin-left: 8px;"></i> تحكم في مدة العرض
+                                </li>
+                            </ul>
+                            <button class="btn-secondary" style="width: 100%; justify-content: center;">اشترك الآن</button>
+                        </div>
+                        <div style="background: rgba(212, 168, 83, 0.1); border: 2px solid var(--primary); border-radius: 14px; padding: 25px; text-align: center; position: relative;">
+                            <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--primary); color: var(--bg-dark); padding: 3px 15px; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">الأفضل</div>
+                            <h4 style="color: var(--primary); margin-bottom: 10px;">سنوي</h4>
+                            <div style="font-size: 2rem; font-weight: 900; color: var(--text-light); margin-bottom: 5px;">
+                                799 <span style="font-size: 0.9rem; color: var(--text-muted);">ج.م/سنة</span>
+                            </div>
+                            <ul style="list-style: none; margin: 15px 0; text-align: right;">
+                                <li style="padding: 5px 0; color: var(--text-muted); font-size: 0.85rem;">
+                                    <i class="fas fa-check" style="color: var(--primary); margin-left: 8px;"></i> كل مميزات الشهري
+                                </li>
+                                <li style="padding: 5px 0; color: var(--text-muted); font-size: 0.85rem;">
+                                    <i class="fas fa-check" style="color: var(--primary); margin-left: 8px;"></i> وفر 33%
+                                </li>
+                                <li style="padding: 5px 0; color: var(--text-muted); font-size: 0.85rem;">
+                                    <i class="fas fa-check" style="color: var(--primary); margin-left: 8px;"></i> دعم فني أولوية
+                                </li>
+                            </ul>
+                            <button class="btn-primary" style="width: 100%; justify-content: center;">اشترك الآن</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Cheko Fotoshope - جميع الحقوق محفوظة</p>
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

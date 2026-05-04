@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيشنات | Cheko Fotoshope</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Loading -->
+    <div class="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">CHEKO</a>
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="portfolio.html">البورتفوليو</a></li>
+            <li><a href="sessions.html" style="color: var(--primary);">السيشنات</a></li>
+            <li><a href="admin.html">لوحة التحكم</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <h1><i class="fas fa-camera-retro" style="margin-left: 15px;"></i> السيشنات</h1>
+        <p>ابحث عن صورك باستخدام اسمك أو رقم هاتفك</p>
+        <div class="page-header-line"></div>
+    </div>
+
+    <!-- Search Section -->
+    <section class="sessions-section">
+        <div class="search-box fade-in">
+            <h2><i class="fas fa-search" style="margin-left: 10px;"></i> البحث عن صورك</h2>
+            <p>أدخل اسمك أو رقم هاتفك المسجل لعرض صور السيشن الخاص بك</p>
+            
+            <div class="search-input-group">
+                <input type="text" id="clientSearch" placeholder="اكتب اسمك أو رقم هاتفك...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+            <button class="btn-primary" id="searchBtn">
+                <i class="fas fa-search"></i>
+                بحث
+            </button>
+        </div>
+
+        <!-- Search Results -->
+        <div class="search-results" id="searchResults">
+            <div class="result-header">
+                <h3>مرحباً <span id="resultClientName"></span> 👋</h3>
+                <div class="result-timer">
+                    <i class="fas fa-clock"></i>
+                    <span>متبقي: </span>
+                    <span id="remainingTime"></span>
+                </div>
+            </div>
+            <div class="photos-grid" id="photosGrid">
+                <!-- Photos loaded dynamically -->
+            </div>
+        </div>
+
+        <!-- No Results -->
+        <div class="no-results" id="noResults">
+            <i class="fas fa-search" style="display: block;"></i>
+            <p style="font-size: 1.1rem; margin-bottom: 8px; color: var(--text-light);">لم يتم العثور على نتائج</p>
+            <p>تأكد من كتابة اسمك أو رقم هاتفك بشكل صحيح</p>
+        </div>
+
+        <!-- Session Expired -->
+        <div class="session-expired" id="sessionExpired">
+            <i class="fas fa-hourglass-end" style="display: block;"></i>
+            <h3>انتهت صلاحية السيشن</h3>
+            <p>عذراً، انتهت مدة عرض الصور. تواصل مع المصور لتجديد المدة.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Cheko Fotoshope - جميع الحقوق محفوظة</p>
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
