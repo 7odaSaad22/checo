@@ -73,6 +73,11 @@ window.addEventListener('load', () => {
         setTimeout(() => loader.classList.add('hidden'), 800);
     }
 });
+// Fallback: hide loading screen after 3s even if JS errors occur
+setTimeout(() => {
+    const loader = document.querySelector('.loading-screen');
+    if (loader) loader.classList.add('hidden');
+}, 3000);
 
 // --- Navbar Scroll ---
 window.addEventListener('scroll', () => {
@@ -347,10 +352,12 @@ function initAdminPage() {
     // Tabs
     document.querySelectorAll('.admin-tab').forEach(tab => {
         tab.addEventListener('click', () => {
+            if (!tab.dataset.tab) return;
             document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
             document.querySelectorAll('.admin-tab-content').forEach(c => c.style.display = 'none');
             tab.classList.add('active');
-            document.getElementById(tab.dataset.tab).style.display = 'block';
+            const tabEl = document.getElementById(tab.dataset.tab);
+            if (tabEl) tabEl.style.display = 'block';
         });
     });
 
